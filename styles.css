@@ -216,3 +216,5 @@ input,select,textarea{font:inherit;font-weight:400;padding:13px 14px;border:2px 
 @media (max-width:520px){.beneficios{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.beneficio{border-radius:14px}}
 .menu a{white-space:nowrap}
 @media (min-width:901px) and (max-width:1150px){.menu a{padding:10px 11px;font-size:15px}.brand small{display:none}}
+
+.menu a.btn-aula.con-usuario{display:inline-flex;align-items:center;gap:8px}

@@ -85,3 +85,21 @@ if (visor) {
   visor.querySelector('.cerrar').addEventListener('click', () => visor.close());
   visor.addEventListener('click', (e) => { if (e.target === visor) visor.close(); });
 }
+
+// Si hay una sesión iniciada en el aula, el botón "Aula virtual" muestra el nombre del usuario.
+(function () {
+  try {
+    const btn = document.querySelector('.menu .btn-aula');
+    if (!btn) return;
+    const tieneSesion = Object.keys(localStorage).some((k) => /^sb-.+-auth-token$/.test(k));
+    const u = JSON.parse(localStorage.getItem('point-usuario') || 'null');
+    if (!tieneSesion || !u) return;
+    const nombre = (u.nombre || u.email || 'Mi aula').trim();
+    const corto = nombre.split(/\s+/).slice(0, 2).join(' ');
+    btn.innerHTML = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg><span></span>';
+    btn.querySelector('span').textContent = corto.length > 22 ? corto.slice(0, 21) + '…' : corto;
+    btn.classList.add('con-usuario');
+    btn.title = 'Ir a mi aula';
+    btn.setAttribute('aria-label', 'Ir a mi aula (' + nombre + ')');
+  } catch (e) { /* sin acceso a localStorage: queda "Aula virtual" */ }
+})();

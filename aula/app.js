@@ -93,6 +93,7 @@ async function arrancarReal() {
   try { perfil = await api.miPerfil(); }
   catch (e) { return pintar(vacio(`No pudimos cargar tu perfil. Probá salir y volver a entrar.<br><small>${esc(e.message)}</small>`)); }
 
+  recordarUsuario(perfil);
   document.getElementById('usuario').hidden = false;
   document.getElementById('usuario-nombre').textContent = nombre(perfil);
   document.getElementById('usuario-rol').textContent = ROLES[perfil.rol];
@@ -107,7 +108,12 @@ async function arrancarReal() {
   else rutear();
 }
 
-document.getElementById('btn-salir').onclick = async () => { await api.salir(); location.hash = ''; location.reload(); };
+document.getElementById('btn-salir').onclick = async () => { olvidarUsuario(); await api.salir(); location.hash = ''; location.reload(); };
+// La web (fuera del aula) lee esto para mostrar el nombre en el botón "Aula virtual".
+function recordarUsuario(p) {
+  try { localStorage.setItem('point-usuario', JSON.stringify({ nombre: [p.nombre, p.apellido].filter(Boolean).join(' '), email: p.email, rol: p.rol })); } catch {}
+}
+function olvidarUsuario() { try { localStorage.removeItem('point-usuario'); } catch {} }
 
 async function armarNav() {
   const items = perfil.rol === 'alumno'
@@ -155,6 +161,7 @@ async function rutear() {
 
 // ---------------- Login ----------------
 function pantallaLogin(error) {
+  olvidarUsuario();
   $nav.hidden = true; document.getElementById('usuario').hidden = true;
   const ic = (d) => `<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
   pintar(`
