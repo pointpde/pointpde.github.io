@@ -223,3 +223,7 @@ input,select,textarea{font:inherit;font-weight:400;padding:13px 14px;border:2px 
 .caja-legal h2{font-size:26px;color:var(--violeta-osc);margin-top:14px}
 .caja-legal ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px}
 @media (max-width:720px){.caja-legal{padding:26px 20px}}
+
+.dato{min-width:0}
+.dato>span:last-child{min-width:0;overflow-wrap:anywhere}
+.dato .icono{flex:0 0 56px}
