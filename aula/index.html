@@ -1,5 +1,35 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><title>Point</title>
-<meta name="robots" content="noindex"><link rel="canonical" href="https://pointpde.com/aula.html">
-<meta http-equiv="refresh" content="0; url=/aula.html"></head>
-<body><a href="/aula.html">Ir a aula.html</a></body></html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aula virtual · Point Punto de Estudio</title>
+<meta name="description" content="Aula virtual de Point: clases en vivo, grabaciones y tareas.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#7B3FF2">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="aula.css">
+</head>
+<body class="aula">
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.png" alt="Point"><span><b>Aula Point</b><small>Punto de Estudio</small></span></a>
+    <div class="usuario" id="usuario" hidden>
+      <span id="usuario-nombre"></span>
+      <span class="rol" id="usuario-rol"></span>
+      <button class="btn-salir" type="button" id="btn-salir">Salir</button>
+    </div>
+  </div>
+</header>
+<nav class="tabs-aula" id="nav" aria-label="Secciones del aula" hidden><div class="wrap" id="nav-links"></div></nav>
+<main id="app" class="wrap app-main" tabindex="-1">
+  <div class="cargando" role="status">Cargando…</div>
+</main>
+<div class="aviso-flotante" id="toast" role="status" aria-live="polite" hidden></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
