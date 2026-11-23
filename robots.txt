@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /aula-demo.html
+Disallow: /aula/
 
 Sitemap: https://pointpde.com/sitemap.xml
