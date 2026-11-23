@@ -190,7 +190,7 @@ function pantallaLogin(error) {
         <label>Tu mail<input type="email" name="email" required autocomplete="email" placeholder="nombre@gmail.com"></label>
         <button class="btn-s v" type="submit">Enviarme un link para entrar</button>
       </form>
-      <p class="meta ingreso-ayuda">¿Dudas? Escribinos por <a href="https://wa.me/5493816111359">WhatsApp</a> · <a href="/">Volver a la web</a></p>
+      <p class="meta ingreso-ayuda">¿Dudas? Escribinos por <a href="https://wa.me/5493816111359">WhatsApp</a> · <a href="/">Volver a la web</a> · <a href="/privacidad.html">Privacidad</a></p>
     </div>
   </section>`);
   document.getElementById('btn-google').onclick = (e) => accion(e.currentTarget, () => api.entrarConGoogle());
