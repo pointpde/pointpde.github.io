@@ -126,3 +126,6 @@ table.tabla{width:100%;border-collapse:collapse;min-width:640px}
   .ingreso-intro h1{font-size:26px}
   .ingreso-intro p,.ingreso-lista{display:none}
 }
+
+/* reproductor: ocupa el ancho de la tarjeta en 16:9 (pisa el .video viejo de /styles.css) */
+.app-main .video{height:auto;display:block;aspect-ratio:16/9;width:100%;max-width:1000px;border-radius:16px}
