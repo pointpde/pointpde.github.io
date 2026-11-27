@@ -10,6 +10,8 @@ catch (e) {
   throw e;
 }
 
+import { MATERIAL_EXTRA_URL } from './config.js';
+
 const $app = document.getElementById('app');
 const $nav = document.getElementById('nav');
 const $navLinks = document.getElementById('nav-links');
@@ -124,7 +126,8 @@ async function armarNav() {
     items.unshift(['#/admin/pendientes', `Pendientes${n ? `<span class="cuenta">${n}</span>` : ''}`]);
     items.push(['#/admin/usuarios', 'Usuarios'], ['#/admin/materias', 'Materias'], ['#/admin/personal', 'Personal']);
   }
-  $navLinks.innerHTML = items.map(([h, t]) => `<a href="${h}">${t}</a>`).join('');
+  $navLinks.innerHTML = items.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')
+    + (MATERIAL_EXTRA_URL ? `<a class="externo" href="${MATERIAL_EXTRA_URL}" target="_blank" rel="noopener">Material extra <span aria-hidden="true">↗</span><span class="sr">(se abre en otra pestaña)</span></a>` : '');
   $nav.hidden = false; marcarNav();
 }
 function marcarNav() {

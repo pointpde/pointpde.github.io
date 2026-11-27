@@ -227,3 +227,15 @@ input,select,textarea{font:inherit;font-weight:400;padding:13px 14px;border:2px 
 .dato{min-width:0}
 .dato>span:last-child{min-width:0;overflow-wrap:anywhere}
 .dato .icono{flex:0 0 56px}
+/* Viajes */
+.viajes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.viaje{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 6px 0 #E2D4FF;display:flex;flex-direction:column}
+.viaje .beneficio{border-radius:0;box-shadow:none;aspect-ratio:3/4;width:100%}
+.viaje .beneficio img{object-position:top}
+.viaje-txt{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.viaje-txt h3{font-size:24px;color:var(--violeta-osc)}
+.viaje-txt .lugar{font-weight:800;font-size:14px;color:var(--turquesa);text-transform:uppercase;letter-spacing:.04em}
+.viaje-txt p{color:var(--suave);flex:1}
+.viaje-txt .btn{align-self:flex-start;margin-top:6px}
+.nota-viajes{margin-top:24px;font-weight:700;color:var(--suave)}
+.viajes-home{background:var(--violeta)}
